@@ -1,4 +1,4 @@
-# 你好，我是黄璟 Shirley 👋
+# 你好，我是 Shirley 👋
 
 ![Shirley 的 AI 产品作品集](assets/intro.svg)
 
