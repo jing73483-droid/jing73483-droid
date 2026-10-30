@@ -2,7 +2,7 @@
 
 <img src="assets/spider-profile-aligned.gif" width="960" alt="Shirley 的 AI 产品探索：半圆数据弧、蜘蛛爬虫与六栏项目面板" />
 
-<h3 align="center">about me</h3>
+<h3 align="center">About Me</h3>
 
 <p align="center">
 I'm Shirley Huang, focused on AI product design and hands-on experimentation.<br />
@@ -12,8 +12,8 @@ Feel free to connect with me on Xiaohongshu or explore my project documentation.
 </p>
 
 <p align="center">
-<a href="https://www.xiaohongshu.com/user/profile/57b338e35e87e726f7389f02">Xiaohongshu</a> ·
-<a href="https://github.com/jing73483-droid?tab=repositories">Projects &amp; Documentation</a>
+<a href="https://www.xiaohongshu.com/user/profile/57b338e35e87e726f7389f02">📕 Xiaohongshu</a> ·
+<a href="https://github.com/jing73483-droid?tab=repositories">💻 Projects &amp; Documentation</a>
 </p>
 
 ---
