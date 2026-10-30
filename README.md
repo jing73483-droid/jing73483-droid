@@ -1,6 +1,6 @@
 # 你好，我是 Shirley 👋
 
-![Shirley 的 AI 产品探索：半圆数据弧与蜘蛛爬虫动画](assets/spider-profile.gif)
+![Shirley 的 AI 产品探索：半圆数据弧与蜘蛛爬虫动画](assets/spider-profile-banner.gif)
 
 专注 AI 产品设计与应用实践，具备需求分析、产品规划与原型设计能力。  
 结合 Agent 工作流与多模型能力，将用户需求转化为可执行的产品方案。  

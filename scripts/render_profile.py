@@ -96,7 +96,7 @@ for i in range(390):
 def render(frame,total=100):
  t=frame/total*math.tau
  im=base.copy();d=ImageDraw.Draw(im)
- scan=.35*math.sin(t)
+ scan=-.22+.10*math.sin(t)
  for i,(a,length,col) in enumerate(rays):
   if abs(a-scan)<.055:col='#eb69cd'
   elif a>scan+.18:col='#58405e'
@@ -142,13 +142,15 @@ def render(frame,total=100):
  dot(d,x,y,3,CYAN);txt(d,(839,895),'SCANNING',CYAN,8)
  # Clip artwork to main viewport so rays do not cover the header/footer.
  im.paste(base.crop((0,0,W,TOP)),(0,0));im.paste(base.crop((0,BOTTOM,W,H)),(0,BOTTOM))
- return im.convert('RGB')
+ # Compact 2.09:1 banner matching the requested profile area.
+ # Keep the original geometry; constrain the crawler above the crop boundary.
+ return im.crop((0,0,W,460)).convert('RGB')
 if __name__=='__main__':
  frames=[render(i) for i in range(100)]
  frames[10].save(ROOT/'assets/spider-preview.png')
  # A shared palette prevents color flicker between frames.
  palette=frames[10].quantize(colors=128)
  frames=[f.quantize(palette=palette,dither=Image.Dither.NONE) for f in frames]
- frames[0].save(ROOT/'assets/spider-profile.gif',save_all=True,append_images=frames[1:],duration=80,loop=0,optimize=True,disposal=1)
- print(ROOT/'assets/spider-profile.gif')
- print('bytes:',(ROOT/'assets/spider-profile.gif').stat().st_size)
+ frames[0].save(ROOT/'assets/spider-profile-banner.gif',save_all=True,append_images=frames[1:],duration=80,loop=0,optimize=True,disposal=1)
+ print(ROOT/'assets/spider-profile-banner.gif')
+ print('bytes:',(ROOT/'assets/spider-profile-banner.gif').stat().st_size)
