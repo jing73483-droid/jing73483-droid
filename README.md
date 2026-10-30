@@ -2,11 +2,19 @@
 
 <img src="assets/spider-profile-aligned.gif" width="960" alt="Shirley 的 AI 产品探索：半圆数据弧、蜘蛛爬虫与六栏项目面板" />
 
-专注 AI 产品设计与应用实践，具备需求分析、产品规划与原型设计能力。  
-结合 Agent 工作流与多模型能力，将用户需求转化为可执行的产品方案。  
-覆盖需求研究、MVP 定义、PRD 编写及开发交接，注重产品验证与迭代。
+<h3 align="center">about me</h3>
 
-📕 [小红书](https://www.xiaohongshu.com/user/profile/57b338e35e87e726f7389f02) · 💻 [GitHub 项目](https://github.com/jing73483-droid?tab=repositories)
+<p align="center">
+I'm Shirley Huang, focused on AI product design and hands-on experimentation.<br />
+Through independent projects, I explore user needs and turn ideas into products<br />
+that people can try and validate—with documentation, prototypes, and tools.<br />
+Feel free to connect with me on Xiaohongshu or explore my project documentation.
+</p>
+
+<p align="center">
+<a href="https://www.xiaohongshu.com/user/profile/57b338e35e87e726f7389f02">Xiaohongshu</a> ·
+<a href="https://github.com/jing73483-droid?tab=repositories">Projects &amp; Documentation</a>
+</p>
 
 ---
 
@@ -29,11 +37,3 @@
 我也在公众号分享 AI 相关内容，以下是近期文章入口。
 
 [阅读文章 01](https://mp.weixin.qq.com/s/TZCoeKeb1HqMlxSev869jA) · [阅读文章 02](https://mp.weixin.qq.com/s/9LPGefWKB5H0EY6QUeMYeQ) · [阅读文章 03](https://mp.weixin.qq.com/s/eaZ_efwg_hVMNGbgHlXpwA)
-
----
-
-## 关于我
-
-黄璟 Shirley，专注 AI 产品设计与应用实践。  
-通过独立项目探索用户需求，用文档、原型和工具把产品方案推进到可体验、可验证的阶段。  
-欢迎通过小红书交流，也欢迎查看项目文档。
