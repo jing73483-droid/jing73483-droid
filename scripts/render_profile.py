@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from pathlib import Path
 import math,random
 ROOT=Path(__file__).resolve().parents[1]
-S=2; W,H=960,460; TOP,BOTTOM=32,300
+S=2; W,H=960,460; TOP,BOTTOM=32,319
 PINK='#ec62cf'; CYAN='#80e8ee'; DIM='#a188a9'; WHITE='#ebd9eb'
 FONT='/System/Library/Fonts/Menlo.ttc'
 fonts={s:ImageFont.truetype(FONT,s*S) for s in range(6,25)}
@@ -22,12 +22,12 @@ class Draw:
  def poly(self,p,c,o=None):self.d.polygon(coords(p),fill=c,outline=o)
 def new(mode='RGB',c='#140c1c'):return Image.new(mode,(W*S,H*S),c)
 # Elliptical radii preserve the curved ledger while fitting the complete dashboard.
-CX,CY=-190,164
+CX,CY=-190,173
 def pt(r,a):return (CX+r*math.cos(a),CY+r*.40*math.sin(a))
 RI,RO=580,740
 rng=random.Random(73483)
 base=new();d=Draw(base)
-nodes=[(rng.uniform(-80,400),rng.uniform(35,305)) for _ in range(190)]
+nodes=[(rng.uniform(-80,400),rng.uniform(35,319)) for _ in range(190)]
 for p in nodes:
  for q in rng.sample(nodes,3):
   if math.dist(p,q)<240:d.line([p,q],rng.choice(['#291c33','#30203b','#23192e']),.45)
@@ -41,13 +41,16 @@ for r,c in [(RI,'#b24b94'),(RI+4,'#51243f'),(RO-17,'#3a293c'),(RO-4,'#604168')]:
 for i in range(230):
  a=-.65+i*.0057;d.line([pt(RO-13,a),pt(RO-(21 if i%5==0 else 17),a)],'#715778',.5)
 labels=['user research','agent workflows','product strategy','AIPM workbench','market signals','prototype lab','BRD / MRD / PRD','emotion companion','audio pipeline','content automation','product discovery','human feedback','MVP experiments','prompt engineering','interface craft','AI applications','workflow design','build & iterate','product validation','design handoff','systems thinking','product practice']
+# Center each label on the ellipse's radial midline. Rotating about the
+# tile center avoids the old expanded-bounding-box offset outside the lane.
 for i,label in enumerate(labels):
- a=-.60+i*.057;x,y=pt(RI+12,a)
- tile=Image.new('RGBA',(150*S,16*S));td=ImageDraw.Draw(tile)
- td.text((0,2*S),label,font=fonts[7],fill=WHITE if i%4 else '#b48ba9')
- td.text((128*S,2*S),'run' if i%3==0 else 'keep',font=fonts[6],fill='#b86c96')
- tile=tile.rotate(-a*26,resample=Image.Resampling.BICUBIC,expand=True)
- base.paste(tile,(int(x*S),int((y-5)*S)),tile)
+ a=-.60+i*.057;x,y=pt((RI+RO)/2,a)
+ tile=Image.new('RGBA',(130*S,14*S));td=ImageDraw.Draw(tile)
+ td.text((2*S,2*S),label,font=fonts[7],fill=WHITE if i%4 else '#b48ba9')
+ td.text((112*S,2*S),'run' if i%3==0 else 'keep',font=fonts[6],fill='#b86c96')
+ radial_angle=math.degrees(math.atan2(.40*math.sin(a),math.cos(a)))
+ tile=tile.rotate(-radial_angle,resample=Image.Resampling.BICUBIC,expand=True)
+ base.paste(tile,(round(x*S-tile.width/2),round(y*S-tile.height/2)),tile)
 d=Draw(base)
 # Compact header.
 d.rect((0,0,W,TOP),'#0c0911');d.line([(0,31),(W,31)],'#713051',.7)
@@ -60,9 +63,6 @@ d.text((12,43),'01  EXPLORING',WHITE,11);d.text((12,63),'Ideas into useful produ
 d.text((12,82),'research / design / build',DIM,7);d.text((12,96),'AI PRODUCT DESIGN & PRACTICE','#c15a9f',6)
 # All six project panels, laid out afresh at readable native font sizes.
 d.rect((0,BOTTOM,W,H),'#0c0912');d.line([(0,BOTTOM),(W,BOTTOM)],'#683656',.7)
-for i,c in enumerate([PINK,'#e7cd75','#70d7b1']):d.dot((12+i*10,309),2.5,c)
-d.text((50,305),'Shirley - product exploration console',WHITE,7)
-d.text((745,305),'state: exploring','#e2ca78',7)
 for n,title in enumerate(['research','workflow','projects','build log','agent lab','notes']):
  x=n*160;d.rect((x+3,319,x+157,449),o='#49304b',w=.65)
  d.dot((x+12,328),2,[CYAN,PINK,'#b49adb','#e6cd7c',CYAN,PINK][n]);d.text((x+21,323),title,WHITE,9)
@@ -105,10 +105,10 @@ def render(frame,total=200):
  for j in range(18):
   x=24+j*17;y=170+j*2+5*math.sin(j*.55+t)
   d.ellipse((x-3,y-3,x+3,y+3),o='#74597f',w=.6);d.dot((x,y),.6,'#c99bc5')
- a=scan;sx,sy=pt(RI+70,a);layer=new('RGBA',(0,0,0,0));ld=Draw(layer)
+ a=scan;sx,sy=pt((RI+RO)/2,a);heading=math.atan2(math.sin(a),.40*math.cos(a));layer=new('RGBA',(0,0,0,0));ld=Draw(layer)
  def sp(x,y):
   x*=.50;y*=.50
-  return (sx+x*math.cos(a)-y*math.sin(a),sy+x*math.sin(a)+y*math.cos(a))
+  return (sx+x*math.cos(heading)-y*math.sin(heading),sy+x*math.sin(heading)+y*math.cos(heading))
  for side in [-1,1]:
   for j in range(4):
    gait=math.sin(t*10+j*1.8+(math.pi if side<0 else 0))
@@ -137,6 +137,6 @@ if __name__=='__main__':
  for i in range(200):
   frames.append(render(i).quantize(palette=palette,dither=Image.Dither.NONE))
   if i%50==0:print('frame',i,flush=True)
- path=ROOT/'assets/spider-profile-hd.gif'
+ path=ROOT/'assets/spider-profile-aligned.gif'
  frames[0].save(path,save_all=True,append_images=frames[1:],duration=40,loop=0,optimize=True,disposal=1)
  print(path, path.stat().st_size,flush=True)
