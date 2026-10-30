@@ -12,25 +12,15 @@
 
 ## 🛠️ 能力与工具
 
-**产品研究**
+<p><strong>AI 模型：</strong> <img src="assets/capabilities/chatgpt.svg" height="26" align="center" alt="ChatGPT" /> <img src="assets/capabilities/deepseek.svg" height="26" align="center" alt="DeepSeek" /> <img src="assets/capabilities/claude.svg" height="26" align="center" alt="Claude" /> <img src="assets/capabilities/gemini.svg" height="26" align="center" alt="Gemini" /> <img src="assets/capabilities/doubao.svg" height="26" align="center" alt="豆包" /></p>
 
-<img src="assets/capabilities/needs.svg" height="34" alt="需求分析" /> <img src="assets/capabilities/users.svg" height="34" alt="用户研究" /> <img src="assets/capabilities/competitors.svg" height="34" alt="竞品分析" /> <img src="assets/capabilities/insights.svg" height="34" alt="需求洞察" />
+<p><strong>AI Coding：</strong> <img src="assets/capabilities/codex.svg" height="26" align="center" alt="Codex" /> <img src="assets/capabilities/claude-code.svg" height="26" align="center" alt="Claude Code" /> <img src="assets/capabilities/cursor.svg" height="26" align="center" alt="Cursor" /> <img src="assets/capabilities/copilot.svg" height="26" align="center" alt="GitHub Copilot" /> <img src="assets/capabilities/vscode.svg" height="26" align="center" alt="VS Code" /></p>
 
-**需求规划**
+<p><strong>设计与协作：</strong> <img src="assets/capabilities/figma.svg" height="26" align="center" alt="Figma" /> <img src="assets/capabilities/github.svg" height="26" align="center" alt="GitHub" /> <img src="assets/capabilities/markdown.svg" height="26" align="center" alt="Markdown" /> <img src="assets/capabilities/feishu.svg" height="26" align="center" alt="飞书" /></p>
 
-<img src="assets/capabilities/brd.svg" height="34" alt="BRD" /> <img src="assets/capabilities/mrd.svg" height="34" alt="MRD" /> <img src="assets/capabilities/prd.svg" height="34" alt="PRD" /> <img src="assets/capabilities/mvp.svg" height="34" alt="MVP 定义" /> <img src="assets/capabilities/handoff.svg" height="34" alt="设计交接" />
+<p><strong>内容平台：</strong> <img src="assets/capabilities/douyin.svg" height="26" align="center" alt="抖音" /> <img src="assets/capabilities/bilibili.svg" height="26" align="center" alt="B站" /> <img src="assets/capabilities/xiaohongshu.svg" height="26" align="center" alt="小红书" /> <img src="assets/capabilities/wechat.svg" height="26" align="center" alt="微信公众号" /> <img src="assets/capabilities/zhihu.svg" height="26" align="center" alt="知乎" /></p>
 
-**AI 应用**
-
-<img src="assets/capabilities/agents.svg" height="34" alt="Agent 工作流" /> <img src="assets/capabilities/prompts.svg" height="34" alt="Prompt 设计" /> <img src="assets/capabilities/skills.svg" height="34" alt="Skill 编排" /> <img src="assets/capabilities/models.svg" height="34" alt="多模型应用" />
-
-**设计表达**
-
-<img src="assets/capabilities/prototype.svg" height="34" alt="交互原型" /> <img src="assets/capabilities/experience.svg" height="34" alt="体验设计" /> <img src="assets/capabilities/workflow.svg" height="34" alt="流程设计" />
-
-**常用工具**
-
-<img src="assets/capabilities/figma.svg" height="34" alt="Figma" /> <img src="assets/capabilities/chatgpt.svg" height="34" alt="ChatGPT" /> <img src="assets/capabilities/codex.svg" height="34" alt="Codex" /> <img src="assets/capabilities/github.svg" height="34" alt="GitHub" /> <img src="assets/capabilities/markdown.svg" height="34" alt="Markdown" />
+<p><strong>产品能力：</strong> <img src="assets/capabilities/agents.svg" height="26" align="center" alt="Agent 工作流" /> <img src="assets/capabilities/prompts.svg" height="26" align="center" alt="Prompt 设计" /> <img src="assets/capabilities/skills.svg" height="26" align="center" alt="Skill 编排" /> <img src="assets/capabilities/models.svg" height="26" align="center" alt="多模型应用" /></p>
 
 ---
 
